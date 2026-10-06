@@ -7,29 +7,25 @@
 <!-- Sección Hero / Bienvenida -->
 <section class="hero-section text-center mb-5">
     <div class="container py-4">
-        <span class="badge bg-primary text-uppercase px-3 py-2 mb-3 fw-semibold shadow-sm">
-            <i class="bi bi-star-fill text-warning me-1"></i> Evaluación Sumativa 2 - Django
+        <span class="badge bg-primary px-3 py-2 mb-3 fw-semibold shadow-sm">
+            <i class="bi bi-film me-1"></i> Catálogo de Películas
         </span>
         <h1 class="display-4 fw-bold text-white mb-3">
             Bienvenido al Portal Cinematográfico
         </h1>
         <p class="lead text-light-emphasis col-lg-8 mx-auto mb-4">
-            Explora una cuidada selección de películas clasificadas por género. Selecciona una categoría a continuación para descubrir sus obras maestras, directores, clasificación por edad y material visual.
+            Explora nuestra selección de películas organizadas por género. Selecciona una categoría para ver directores, año de estreno, clasificación por edad y detalles de cada obra.
         </p>
         
-        <!-- Métricas con componentes de Bootstrap -->
+        <!-- Métricas simples -->
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
                 <span class="fs-4 fw-bold text-info">{{ total_generos }}</span>
-                <small class="text-white-50">Géneros Disponibles</small>
+                <small class="text-white-50">Géneros</small>
             </div>
             <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
                 <span class="fs-4 fw-bold text-warning">{{ total_peliculas }}</span>
                 <small class="text-white-50">Películas en Catálogo</small>
-            </div>
-            <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
-                <span class="fs-4 fw-bold text-success">100%</span>
-                <small class="text-white-50">Django & Bootstrap 5</small>
             </div>
         </div>
     </div>
@@ -99,26 +95,6 @@
                 </div>
             </div>
         {% endif %}
-    </div>
-</div>
-
-<!-- Ficha informativa de autoría y rúbrica -->
-<div class="container my-5">
-    <div class="card bg-black border-secondary p-4 rounded-4 shadow">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h4 class="text-white fw-bold mb-2">
-                    <i class="bi bi-code-slash text-success me-2"></i>Proyecto de Evaluación Sumativa 2
-                </h4>
-                <p class="text-white-50 mb-0">
-                    Desarrollado de acuerdo con las especificaciones de la rúbrica oficial de Back End (Django 4.2, Bootstrap 5, Git y GitHub).
-                </p>
-            </div>
-            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                <span class="badge bg-secondary p-2 me-1"><i class="bi bi-person-badge"></i> Benjamín Rivas</span>
-                <span class="badge bg-info text-dark p-2"><i class="bi bi-building"></i> INACAP</span>
-            </div>
-        </div>
     </div>
 </div>
 {% endblock %}
