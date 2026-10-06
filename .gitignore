@@ -1,0 +1,31 @@
+# Entornos virtuales
+venv/
+env/
+.env
+ENV/
+env.bak/
+venv.bak/
+
+# Bytecode de Python y caché
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Base de datos local
+*.sqlite3
+*.db
+
+# Archivos de sistema y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs y temporales
+*.log
+*.tmp
+*.bak
