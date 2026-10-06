@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="coco_bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="60%" stop-color="#701a75"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#coco_bg)"/>
+  <!-- Guitar body representation -->
+  <circle cx="200" cy="260" r="60" fill="#fbbf24"/>
+  <circle cx="200" cy="260" r="20" fill="#4c1d95"/>
+  <rect x="195" y="120" width="10" height="140" fill="#f59e0b"/>
+  <!-- Decorative cempasuchil petals -->
+  <circle cx="120" cy="320" r="15" fill="#f97316"/>
+  <circle cx="280" cy="320" r="15" fill="#f97316"/>
+  
+  <text x="200" y="440" font-family="'Trebuchet MS', Arial, sans-serif" font-size="44" font-weight="900" fill="#fef08a" text-anchor="middle" letter-spacing="8">COCO</text>
+  <text x="200" y="475" font-family="Arial, sans-serif" font-size="14" fill="#fed7aa" text-anchor="middle" letter-spacing="2">ANIMACIÓN / PIXAR • 2017</text>
+  <rect x="130" y="505" width="140" height="28" rx="14" fill="#f59e0b"/>
+  <text x="200" y="524" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#000000" text-anchor="middle">TODO ESPECTADOR</text>
+</svg>

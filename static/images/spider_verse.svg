@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spider_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#spider_bg)"/>
+  <polygon points="200,120 280,240 240,320 160,320 120,240" fill="#e11d48"/>
+  <circle cx="170" cy="220" r="15" fill="#ffffff"/>
+  <circle cx="230" cy="220" r="15" fill="#ffffff"/>
+  <text x="200" y="430" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">SPIDER-MAN</text>
+  <text x="200" y="460" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#38bdf8" text-anchor="middle">INTO THE SPIDER-VERSE</text>
+  <text x="200" y="485" font-family="Arial, sans-serif" font-size="14" fill="#fbcfe8" text-anchor="middle" letter-spacing="1">ANIMACIÓN • 2018</text>
+  <rect x="135" y="505" width="130" height="28" rx="14" fill="#e11d48"/>
+  <text x="200" y="524" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">+7 AÑOS / TE</text>
+</svg>

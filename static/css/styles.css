@@ -1,0 +1,80 @@
+/* ==========================================================
+   Evaluación Sumativa 2 - Programación Back End
+   Estilos personalizados del sitio web de Películas
+   Alumno: Benjamín Rivas
+   ========================================================== */
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    --genre-card-hover: translateY(-6px);
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-section {
+    background: radial-gradient(circle at 50% 30%, #1e293b 0%, #0f172a 100%);
+    border-bottom: 1px solid #334155;
+    padding: 3rem 1rem;
+}
+
+.card-movie {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    height: 100%;
+}
+
+.card-movie:hover {
+    transform: var(--genre-card-hover);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+    border-color: #0d6efd;
+}
+
+.card-movie img {
+    height: 340px;
+    object-fit: cover;
+    width: 100%;
+    border-bottom: 1px solid #334155;
+}
+
+.badge-age {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 50rem;
+}
+
+.genre-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.genre-card:hover {
+    transform: var(--genre-card-hover);
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+footer {
+    background-color: #0b1120;
+    border-top: 1px solid #1e293b;
+}
