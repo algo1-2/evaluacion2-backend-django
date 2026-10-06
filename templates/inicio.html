@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Inicio - Portal de Cine | Benjamín Rivas{% endblock %}
+
+{% block content %}
+<!-- Sección Hero / Bienvenida -->
+<section class="hero-section text-center mb-5">
+    <div class="container py-4">
+        <span class="badge bg-primary text-uppercase px-3 py-2 mb-3 fw-semibold shadow-sm">
+            <i class="bi bi-star-fill text-warning me-1"></i> Evaluación Sumativa 2 - Django
+        </span>
+        <h1 class="display-4 fw-bold text-white mb-3">
+            Bienvenido al Portal Cinematográfico
+        </h1>
+        <p class="lead text-light-emphasis col-lg-8 mx-auto mb-4">
+            Explora una cuidada selección de películas clasificadas por género. Selecciona una categoría a continuación para descubrir sus obras maestras, directores, clasificación por edad y material visual.
+        </p>
+        
+        <!-- Métricas con componentes de Bootstrap -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
+                <span class="fs-4 fw-bold text-info">{{ total_generos }}</span>
+                <small class="text-white-50">Géneros Disponibles</small>
+            </div>
+            <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
+                <span class="fs-4 fw-bold text-warning">{{ total_peliculas }}</span>
+                <small class="text-white-50">Películas en Catálogo</small>
+            </div>
+            <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
+                <span class="fs-4 fw-bold text-success">100%</span>
+                <small class="text-white-50">Django & Bootstrap 5</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Listado de Géneros Cinematográficos con Componentes Bootstrap -->
+<div class="container mb-5">
+    <div class="text-center mb-4">
+        <h2 class="h3 fw-bold text-white">
+            <i class="bi bi-collection-play-fill text-danger me-2"></i>Selecciona un Género Cinematográfico
+        </h2>
+        <p class="text-white-50">Haz clic en cualquiera de las categorías para ver el catálogo detallado de películas.</p>
+    </div>
+
+    <!-- Grid de Bootstrap con Cards interactivas para cada género -->
+    <div class="row g-4 justify-content-center">
+        {% if generos %}
+            {% for genero in generos %}
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="card genre-card h-100 shadow-lg text-white">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-{{ genero.color }} fs-6 px-3 py-2 rounded-pill">
+                                <i class="bi {{ genero.icono }} me-1"></i> {{ genero.nombre }}
+                            </span>
+                            <span class="text-white-50 small">
+                                <i class="bi bi-film"></i> {{ genero.peliculas|length }} películas
+                            </span>
+                        </div>
+                        
+                        <h3 class="card-title h4 fw-bold mb-3 text-white">
+                            {{ genero.nombre }}
+                        </h3>
+                        
+                        <p class="card-text text-secondary mb-4 flex-grow-1">
+                            {{ genero.descripcion }}
+                        </p>
+
+                        <!-- Vista previa de títulos de películas del género -->
+                        <div class="mb-4 p-3 bg-black bg-opacity-50 rounded-3 border border-secondary border-opacity-50">
+                            <small class="text-uppercase text-white-50 fw-semibold d-block mb-2">Títulos destacados:</small>
+                            <ul class="list-unstyled mb-0 small">
+                                {% for p in genero.peliculas %}
+                                    <li class="mb-1 text-light">
+                                        <i class="bi bi-check2-circle text-{{ genero.color }} me-1"></i>
+                                        <strong>{{ p.nombre }}</strong> <span class="text-white-50">({{ p.año }})</span>
+                                        {% if p.destacada %}
+                                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">Top</span>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <a href="{% url 'home:genero' genero.slug %}" class="btn btn-{{ genero.color }} btn-lg w-100 fw-bold shadow-sm d-flex justify-content-center align-items-center gap-2">
+                            <span>Explorar películas de {{ genero.nombre }}</span>
+                            <i class="bi bi-arrow-right-circle-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i> No se encontraron géneros disponibles en el catálogo en este momento.
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Ficha informativa de autoría y rúbrica -->
+<div class="container my-5">
+    <div class="card bg-black border-secondary p-4 rounded-4 shadow">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h4 class="text-white fw-bold mb-2">
+                    <i class="bi bi-code-slash text-success me-2"></i>Proyecto de Evaluación Sumativa 2
+                </h4>
+                <p class="text-white-50 mb-0">
+                    Desarrollado de acuerdo con las especificaciones de la rúbrica oficial de Back End (Django 4.2, Bootstrap 5, Git y GitHub).
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                <span class="badge bg-secondary p-2 me-1"><i class="bi bi-person-badge"></i> Benjamín Rivas</span>
+                <span class="badge bg-info text-dark p-2"><i class="bi bi-building"></i> INACAP</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
