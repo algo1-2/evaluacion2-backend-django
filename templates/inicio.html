@@ -4,7 +4,6 @@
 {% block title %}Inicio - Portal de Cine | Benjamín Rivas{% endblock %}
 
 {% block content %}
-<!-- Sección Hero / Bienvenida -->
 <section class="hero-section text-center mb-5">
     <div class="container py-4">
         <span class="badge bg-primary px-3 py-2 mb-3 fw-semibold shadow-sm">
@@ -17,7 +16,6 @@
             Explora nuestra selección de películas organizadas por género. Selecciona una categoría para ver directores, año de estreno, clasificación por edad y detalles de cada obra.
         </p>
         
-        <!-- Métricas simples -->
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <div class="card bg-dark border-secondary px-3 py-2 text-center shadow-sm">
                 <span class="fs-4 fw-bold text-info">{{ total_generos }}</span>
@@ -31,7 +29,6 @@
     </div>
 </section>
 
-<!-- Listado de Géneros Cinematográficos con Componentes Bootstrap -->
 <div class="container mb-5">
     <div class="text-center mb-4">
         <h2 class="h3 fw-bold text-white">
@@ -40,7 +37,6 @@
         <p class="text-white-50">Haz clic en cualquiera de las categorías para ver el catálogo detallado de películas.</p>
     </div>
 
-    <!-- Grid de Bootstrap con Cards interactivas para cada género -->
     <div class="row g-4 justify-content-center">
         {% if generos %}
             {% for genero in generos %}
@@ -64,7 +60,6 @@
                             {{ genero.descripcion }}
                         </p>
 
-                        <!-- Vista previa de títulos de películas del género -->
                         <div class="mb-4 p-3 bg-black bg-opacity-50 rounded-3 border border-secondary border-opacity-50">
                             <small class="text-uppercase text-white-50 fw-semibold d-block mb-2">Títulos destacados:</small>
                             <ul class="list-unstyled mb-0 small">

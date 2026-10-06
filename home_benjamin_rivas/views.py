@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 
-# Diccionario de datos con los géneros y sus respectivas películas
-# Cada película cuenta con: nombre, edad, año, director, imagen estática y sinopsis
+# Catálogo de géneros y películas
 CATALOGO_GENEROS = {
     'ciencia-ficcion': {
         'slug': 'ciencia-ficcion',
@@ -94,16 +93,11 @@ CATALOGO_GENEROS = {
 
 
 def inicio(request):
-    """
-    Vista de bienvenida principal.
-    Muestra los dos géneros cinematográficos disponibles utilizando componentes de Bootstrap,
-    con sus descripciones y enlaces directos hacia sus respectivas carteleras.
-    """
     generos_lista = list(CATALOGO_GENEROS.values())
     total_peliculas = sum(len(g['peliculas']) for g in generos_lista)
 
     context = {
-        'titulo': 'Catálogo Principal de Películas',
+        'titulo': 'Catálogo de Películas',
         'alumno': 'Benjamín Rivas',
         'generos': generos_lista,
         'total_peliculas': total_peliculas,
@@ -113,17 +107,10 @@ def inicio(request):
 
 
 def detalle_genero(request, slug_genero):
-    """
-    Vista de listado de películas por género.
-    Recibe el slug del género y despliega sus películas con su nombre, edad, director
-    e imágenes alojadas en static/.
-    """
     if slug_genero not in CATALOGO_GENEROS:
-        raise Http404("El género cinematográfico solicitado no existe en el catálogo.")
+        raise Http404("Género no encontrado")
 
     genero = CATALOGO_GENEROS[slug_genero]
-    
-    # Géneros alternativos para navegación rápida entre ellos
     otros_generos = [g for slug, g in CATALOGO_GENEROS.items() if slug != slug_genero]
 
     context = {
